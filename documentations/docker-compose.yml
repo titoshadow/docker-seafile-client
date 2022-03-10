@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  seafile-client:
+    image: titoshadow/seafile-client:latest
+    container_name: seafile_client
+    volumes:
+      - shared_volume:/library
+    environment:
+      SEAF_SERVER_URL: ""         # The URL to your Seafile server.
+      SEAF_USERNAME: ""           # Your Seafile username.
+      SEAF_PASSWORD: ""           # Your Seafile password.
+      SEAF_LIBRARY_UUID: ""       # The Seafile library UUID you want to sync with.
+#      SEAF_LIBRARY_PASSWORD: ""   # The Seafile library password, if required.
+#      SEAF_SKIP_SSL_CERT: "true"  # Any string is true, omit to set to false.
+#      SEAF_2FA_SECRET: ""         # The 2FA secret key available at Seafile 2FA setup.
+#      UID: ""                     # Default is 1000.
+#      GID: ""                     # Default is 1000.
+
+volumes:
+  shared_volume:
+#   driver: local
+#     driver_opts:
+#       o: bind
+#       type: none
+#       device: /path/to/your/host/folder
+
+

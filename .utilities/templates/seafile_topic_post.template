@@ -1,0 +1,27 @@
+Hello everyone,
+
+I wanted to use files from my Seafile server within Docker containers.
+
+I started looking for existing image featuring a Seafile client on Docker Hub. There are some, but with issues such as non-existant/vague documentation or improper tagging.
+
+I don't know if it's something that people are looking for, but I made one. It's available at flowgunso/seafile-client in Docker Hub.
+
+Example usage with docker-compose and for the docker cli are provided. Essentially, it runs `seaf-cli sync`, but you have to pass to the container your Seafile server URL, your credentials and the library ID you want to sync with. Then you can share the path `/library` as a volume to your containers for your own usages.
+
+Feedback is welcome so I can keep improving it.
+
+# Quick informations
+**[flowgunso/seafile-client](https://hub.docker.com/r/flowgunso/seafile-client)** on Docker Hub, latest stable version: **2.1.1**
+Contribute and report issues on [Gitlab](https://gitlab.com/flwgns-docker/seafile-client/).
+
+## Features
+* Synchronize a single Seafile library, available at the path `/library/'.
+* Password protected librairies are supported.
+* Two factor authentication is supported.
+* Upload and download speeds are configurable.
+* SSL certificates are skippable.
+
+# Change log
+[details]
+{{ changelog }}
+[/details]

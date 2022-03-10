@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  seafile-client:
+    restart: always
+    container_name: seafile_client_Administracion
+    image: titoshadow/seafile-client:latest
+    environment:
+      - SEAF_LIBRARY_UUID=08e44f6e-c934-49bf-a4a7-36e1d5f2c025
+      - SEAF_SERVER_URL=http://seafile.photonicsens.com:8000
+      - SEAF_USERNAME=test@photonicsens.com
+      - SEAF_PASSWORD=migration
+      - SEAF_LIBRARY_PASSWORD=BienvenidoIvanPerino1979
+    volumes:
+      - shared_volume:/library:rw
+
+volumes:
+  shared_volume:
